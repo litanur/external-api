@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "apis",
+  "version": "1.0.0",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
