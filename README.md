@@ -1,4 +1,4 @@
-## Try Upload with https://freeimage.host/page/api
+## Try Upload with The API
 
 ```Result:
 
@@ -92,4 +92,5 @@
         },
         "status_txt": "OK"
     }
-}```
+}
+```

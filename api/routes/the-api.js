@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage: storage })
-router.post("/register", upload.single('image'), function (req, res, next) {
+router.post("/register", upload.single('profile_image'), function (req, res, next) {
   try {
     const form_register = new form();
 
@@ -23,16 +23,16 @@ router.post("/register", upload.single('image'), function (req, res, next) {
       req.file.path, { encoding: "base64" }
     );
 
-    form_register.append("source", image_file);
-    // form_register.append('username', req.username);
-    // form_register.append('password', req.password);
-    // form_register.append('first_name', req.first_name);
-    // form_register.append('last_name', req.last_name);
-    // form_register.append('telephone', req.telephone);
-    // form_register.append('address', req.address);
-    // form_register.append('city', req.city);
-    // form_register.append('province', req.province);
-    // form_register.append('country', req.country);
+    form_register.append('username', req.username);
+    form_register.append('password', req.password);
+    form_register.append("profile_image", image_file);
+    form_register.append('first_name', req.first_name);
+    form_register.append('last_name', req.last_name);
+    form_register.append('telephone', req.telephone);
+    form_register.append('address', req.address);
+    form_register.append('city', req.city);
+    form_register.append('province', req.province);
+    form_register.append('country', req.country);
     console.log("'/register' call");
 
     const config = {
@@ -42,7 +42,7 @@ router.post("/register", upload.single('image'), function (req, res, next) {
         data: form_register
     };
 
-    axios.post(`${process.env.BASE_URL}?key=6d207e02198a847aa98d0a2a901485a5`, form_register,
+    axios.post(`${process.env.BASE_URL}/register`, form_register,
     {
       headers: {
         "Content-Type": "multipart/form-data",
